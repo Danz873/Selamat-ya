@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:linear-gradient(135deg,#ff6ec4,#7873f5,#4facfe);
+    animation:bg 8s infinite alternate;
+}
+
+@keyframes bg{
+    0%{filter:hue-rotate(0deg);}
+    100%{filter:hue-rotate(80deg);}
+}
+
+.card{
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(15px);
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    color:white;
+    box-shadow:0 0 30px rgba(255,255,255,.3);
+}
+
+h1{
+    font-size:50px;
+    animation:zoom 1.5s infinite;
+}
+
+@keyframes zoom{
+    50%{
+        transform:scale(1.08);
+    }
+}
+
+p{
+    margin-top:15px;
+    font-size:20px;
+}
+
+button{
+    margin-top:25px;
+    padding:12px 30px;
+    border:none;
+    border-radius:30px;
+    background:#fff;
+    color:#ff1493;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+#pesan{
+    margin-top:20px;
+    font-size:22px;
+    color:yellow;
+    font-weight:bold;
+}
+
+.balloon{
+    position:absolute;
+    bottom:-150px;
+    width:60px;
+    animation:naik linear infinite;
+}
+
+@keyframes naik{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-130vh);
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div class="card">
+    <h1>🎉 Happy Birthday 🎂</h1>
+
+    <p>Semoga panjang umur, sehat selalu,<br>
+    sukses, bahagia, dan semua impianmu tercapai.</p>
+
+    <button onclick="ucapan()">Klik Kejutan 🎁</button>
+
+    <div id="pesan"></div>
+</div>
+
+<script>
+<h1>🎉 Happy Birthday! 🎂</h1>
+
+<p>
+Selamat ulang tahun!<br><br>
+Semoga panjang umur, sehat selalu, dimudahkan segala urusan, dan semua impianmu tercapai. Tetap semangat menjalani setiap hari dan jangan pernah berhenti tersenyum. Semoga hari spesialmu dipenuhi kebahagiaan dan orang-orang yang menyayangimu. ❤️
+</p>
+
+<h3 style="margin-top:25px;color:#ffe66d;">
+💌  @Anugrah
+</h3>
+
+for(let i=0;i<25;i++){
+    let b=document.createElement("div");
+    b.className="balloon";
+    b.innerHTML="🎈";
+    b.style.left=Math.random()*100+"%";
+    b.style.fontSize=(30+Math.random()*35)+"px";
+    b.style.animationDuration=(5+Math.random()*6)+"s";
+    b.style.animationDelay=Math.random()*5+"s";
+    document.body.appendChild(b);
+}

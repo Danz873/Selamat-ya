@@ -1,0 +1,54 @@
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#8e44ad,#ff6ec4);
+    background-size:400% 400%;
+    animation:gradientBG 12s ease infinite;
+    position:relative;
+}
+
+/* Efek bintang */
+body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px);
+    background-size:80px 80px,120px 120px;
+    background-position:0 0,40px 40px;
+    opacity:.35;
+    animation:stars 20s linear infinite;
+}
+
+/* Cahaya */
+body::after{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle,rgba(255,255,255,.25),transparent 70%);
+    top:-150px;
+    right:-100px;
+    filter:blur(40px);
+}
+
+@keyframes gradientBG{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+@keyframes stars{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-80px);
+    }
+}
